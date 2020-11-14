@@ -1,4 +1,4 @@
-# PrivateVPN---TUI-for-Linux-terminal
+# PrivateVPN-TUI
 
 Text user interface for Linux terminal, created to make connecting to a server easier.
 
