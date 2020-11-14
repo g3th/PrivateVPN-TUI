@@ -1,6 +1,6 @@
 # PrivateVPN-TUI
 
-**Note:** PrivateVPN will need to be installed and configured (i.e. username pass entered into "privatvpn.login" file). Change paths to your own installation directory.
+**Note:** *PrivateVPN will need to be installed and configured (i.e. username pass entered into "privatvpn.login" file). Change paths to your own installation directory.*
 
 Text user interface for Linux terminal, created to make connecting to a server easier.
 
