@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-# Script to pick PrivateVPN server, write to conf 
-# and connect on Kali linux/any linux terminal
-# Change directories to ones of your choice
+# PrivateVPN TUI
+# Kali Linux/Debian or any Terminal
 # 1535
 
 from bs4 import BeautifulSoup as BullShit
