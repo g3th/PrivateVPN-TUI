@@ -1,4 +1,4 @@
-#!/usr/bi#!/usr/bin/python3
+#!/usr/bin/python3
 # Script to pick PrivateVPN server, write to conf
 # and connect on Kali linux/any linux terminal
 # Change directories to ones of your choice
