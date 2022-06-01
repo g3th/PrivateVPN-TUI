@@ -8,6 +8,8 @@ from bs4 import BeautifulSoup as BullShit
 from countrycodes import c_codes
 import requests, os, sys, time
 
+flag = 0
+
 page="https://privatevpn.com/serverlist"
 headers= {'User-Agent':'Mozilla 5.0'}
 url=requests.get(page,headers=headers)
@@ -66,7 +68,7 @@ for i in countries:
 
 al=list(dict.fromkeys(a))
 bl=list(dict.fromkeys(b))
-while True:
+while flag == 0:
 	nations()
 	ch=input("\n"+"Pick a country or (q)uit: ")
 	if ch == "q":
@@ -77,30 +79,31 @@ while True:
 		if ch > len(al) or ch ==0:
 			os.system("clear")
 		else: 
-			break
+			while True:
+				os.system("clear")
+				matchc=cities()
+				ch1=input("\n"+"Pick a city, (p)revious or (q)uit: ")
+				if ch1 == "q":
+					os.system("clear")
+					exit()
+				if ch1 == "p":
+					os.system("clear")
+					break
+				try:
+					ch1=int(ch1)
+					if ch1 > len(matchc) or ch1==0:
+						os.system("clear")
+					else:
+						flag =1 ; break
+				except ValueError:
+					os.system("clear")
 	except ValueError:
 		os.system("clear")
 
-while True:
-	os.system("clear")
-	matchc=cities()
-	ch1=input("\n"+"Pick a city, (p)revious or (q)uit: ")
-	if ch1 == "q":
-		os.system("clear")
-		exit()
-	if ch1 == "p":
-		os.system("clear")
-		break
-	try:
-		ch1=int(ch1)
-		if ch1 > len(matchc) or ch1==0:
-			os.system("clear")
-		else:
-			break
-	except ValueError:
-		os.system("clear")
 
-city=str(matchc[ch1-1]).split("- ")[-1].split("\\n")[0]	
+
+city=str(matchc[ch1-1]).split("- ")[-1].split("\\n")[0]
+
 final=str(c_codes[al[ch]].lower())+"-"+city[:3].lower()+".pvdata.host"
 os.system("clear")
 while True:
@@ -116,6 +119,6 @@ while True:
 		os.system("clear")
 
 os.system("sed s/'"+str(*line).strip()+"'/'remote "+str(final)+" 1194 udp'/g /home/roberto/Desktop/PrivateVPN/privatvpn.conf > /home/roberto/Desktop/PrivateVPN/privatvpn2.conf")
-os.system("rm /home/roberto/Desktop/PrivatVPN/privatvpn.conf & mv /home/roberto/Desktop/PrivateVPN/privatvpn2.conf /home/roberto/Desktop/PrivateVPN/privatvpn.conf")
+os.system("rm /home/roberto/Desktop/PrivateVPN/privatvpn.conf & mv /home/roberto/Desktop/PrivateVPN/privatvpn2.conf /home/roberto/Desktop/PrivateVPN/privatvpn.conf")
 os.system("sudo privatvpn")
 exit()
