@@ -17,8 +17,11 @@ Requires OpenVPN, i.e:
 Requires Private VPN to be configured for a linux installation as root .i.e:
 
 ``` sudo -i ```
+
 ``` cd /home/user/Desktop/PrivateVPN ```
+
 ``` wget "https://privatevpn.com/client/install.sh" ```
+
 ``` ./install.sh ```
 
 and edit path to your PrivateVPN folder.
@@ -27,7 +30,8 @@ and edit path to your PrivateVPN folder.
 
 Fixed:
 
-01/06/22 	- 	fixed the (p) option in menu by adding a flag and nesting loop
-			-	fixed README requirements
+01/06/22
+fixed the (p) option in menu by adding a flag and nesting loop
+fixed README requirements
 
 
