@@ -31,7 +31,8 @@ and edit path to your PrivateVPN folder.
 Fixed:
 
 01/06/22
-fixed the (p) option in menu by adding a flag and nesting loop
-fixed README requirements
+- fixed the (p) option in menu by adding a flag and nesting loop
+- fixed README requirements
+
 
 
